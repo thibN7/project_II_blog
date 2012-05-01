@@ -2,7 +2,7 @@
 
 <ul>  
 <% @posts.each do |post| %> 
-  <li><%= post.title %></li>
+  <li><%= post.title %></li><%= link_to 'Delete', post, :confirm=>"Delete this post ?", method: :delete %>
 <% end %>
 </ul>
 

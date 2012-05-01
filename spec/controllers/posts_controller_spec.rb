@@ -59,5 +59,31 @@ describe PostsController do
 
   end
 
+	describe "DELETE '/posts/:id'" do
+
+		before(:each) do
+			@post = double(Post)
+			Post.stub(:find){@post}
+			@post.stub(:destroy)
+			@params={:id=>"1"}
+		end
+
+		it "should use the 'find' method to find a post" do
+			Post.should_receive(:find).with("1")
+			delete 'destroy', @params
+		end
+
+		it "should use the 'destroy' method to delete the post" do
+			@post.should_receive(:destroy)
+			delete 'destroy', @params
+		end
+
+		it "should redirect the user to the listing posts page" do
+			delete 'destroy', @params
+			response.should redirect_to(posts_path)
+		end		
+
+	end
+
 
 end

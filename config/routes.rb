@@ -3,6 +3,7 @@ Blog::Application.routes.draw do
   resources :posts, :only => [:index]
 	resources :posts, :only => [:new]
 	resources :posts, :only => [:create]
+	resources :posts, :only => [:destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
