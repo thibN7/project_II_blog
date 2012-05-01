@@ -11,8 +11,8 @@ describe "DeletingPosts" do
 
 		it "should have a link by post in the listing posts page to delete a post" do
 			visit posts_path
-			page.should have_link('Delete', :href => post_path(@post1.id))
-			page.should have_link('Delete', :href => post_path(@post2.id))
+			page.should have_link('Delete', :href => post_path(@post1))
+			page.should have_link('Delete', :href => post_path(@post2))
 		end
 
 		it "should delete a post" do

@@ -2,7 +2,8 @@
 
 <ul>  
 <% @posts.each do |post| %> 
-  <li><%= post.title %></li><%= link_to 'Delete', post, :confirm=>"Delete this post ?", method: :delete %>
+  <li><%= post.title %> <%= link_to 'Delete', post, :confirm=>"Delete this post ?", method: :delete %>
+											  <%= link_to 'Show', post_path(post.id) %></li>
 <% end %>
 </ul>
 

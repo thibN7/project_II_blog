@@ -20,10 +20,16 @@ describe "posts/index.html.erb" do
 		rendered.should have_link('New post', :href => new_post_path)
 	end
 
-	it "has a link called 'Delete'" do
+	it "has a link called 'Delete' for each post" do
 		render
 		rendered.should have_link('Delete', :href => post_path(1))
 		rendered.should have_link('Delete', :href => post_path(2))
+	end
+
+	it "has a link called 'Show' for each post" do
+		render
+		rendered.should have_link('Show', :href => post_path(1))
+		rendered.should have_link('Show', :href => post_path(2))
 	end
 
 
