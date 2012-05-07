@@ -1,4 +1,9 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.body %><p>
 <br />
+
+<% @post.comments.all.each do |comment| %>
+	<li><%= comment.writer %> <%= comment.body %></li>
+<% end %>
+
 <%= link_to 'Index', posts_path %>
