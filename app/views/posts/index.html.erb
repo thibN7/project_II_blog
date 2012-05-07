@@ -3,7 +3,8 @@
 <ul>  
 <% @posts.each do |post| %> 
   <li><%= post.title %> <%= link_to 'Delete', post, :confirm=>"Delete this post ?", method: :delete %>
-											  <%= link_to 'Show', post_path(post.id) %></li>
+											  <%= link_to 'Show', post_path(post.id) %>
+												<%= link_to 'Edit', edit_post_path(post.id) %></li>
 <% end %>
 </ul>
 

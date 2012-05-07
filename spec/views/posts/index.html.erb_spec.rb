@@ -32,5 +32,11 @@ describe "posts/index.html.erb" do
 		rendered.should have_link('Show', :href => post_path(2))
 	end
 
+	it "has a link called 'Edit' for each post" do
+		render
+		rendered.should have_link('Edit', :href => edit_post_path(1))
+		rendered.should have_link('Edit', :href => edit_post_path(2))
+	end
+
 
 end

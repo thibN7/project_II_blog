@@ -30,5 +30,13 @@ describe PostsController do
 		get('/posts/1').should route_to("posts#show", :id=>"1")
 	end
 
+	it "should route to #edit" do
+		get('/posts/1/edit').should route_to("posts#edit", :id=>"1")
+	end
+
+	it "should route to #update" do
+		put('/posts/1').should route_to("posts#update", :id=>"1")
+	end
+
 
 end
