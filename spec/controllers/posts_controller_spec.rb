@@ -153,5 +153,7 @@ describe PostsController do
 
 	end
 
+	
+
 
 end

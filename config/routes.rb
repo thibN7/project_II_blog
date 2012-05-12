@@ -6,6 +6,8 @@ Blog::Application.routes.draw do
 	#resources :posts, :only => [:create]
 	#resources :posts, :only => [:destroy]
 
+	match '/posts/:post_id/comments' => 'comments#create', :via => :post
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
