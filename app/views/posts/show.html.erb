@@ -4,7 +4,7 @@
 
 
 <% @post.comments.all.each do |comment| %>
-	<li><%= comment.writer %> <br /> <%= comment.body %></li> <br /> 
+	<li><%= comment.writer %> <br /> <%= comment.body %> <br /> <%= link_to 'Delete', comment_path(@post, comment), method: :delete %></li> <br /> 
 <% end %>
 
 

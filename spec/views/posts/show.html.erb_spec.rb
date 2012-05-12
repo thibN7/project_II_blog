@@ -4,8 +4,8 @@ describe "posts/show.html.erb" do
 
 	before(:each) do
 		@post = stub_model(Post, :title => "titre 1", :body => "blabla 1")
-		comment1 = @post.comments.create({:writer => "Thibault", :body => "Premier commentaire"})
-		comment2 = @post.comments.create({:writer => "Thibthib", :body => "Second commentaire"})
+		@comment1 = @post.comments.create({:writer => "Thibault", :body => "Premier commentaire"})
+		@comment2 = @post.comments.create({:writer => "Thibthib", :body => "Second commentaire"})
 		assign(:post, @post)
 	end
   
@@ -21,6 +21,12 @@ describe "posts/show.html.erb" do
 		rendered.should =~ /Premier commentaire/
 		rendered.should =~ /Thibthib/
 		rendered.should =~ /Second commentaire/
+	end
+
+	it "has a link called 'Delete' for each comment" do
+		render
+		rendered.should have_link('Delete', :href => comment_path(@post, @comment1))
+		rendered.should have_link('Delete', :href => comment_path(@post, @comment2))
 	end
 
 	it "has a link called 'Index'" do
