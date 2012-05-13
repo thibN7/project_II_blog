@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Authentication page</title>
+</head>
+<body>
+
+<h1>Authentication</h1>
+
+
+<% if @authentication_error.nil? %>
+	<p class="info">Please find below the form to fill in to authenticate.</p>
+<% else %>
+	<p>Error during authentication</p>
+		<% if @authentication_error == :unknown_user %>
+			The following login "<%= @login %>" does not exist.
+		<% else %>
+			The password does not match with the login <%= @login %>.
+		<% end %>
+	</p>
+<% end %>
+
+<form action="/sessions<%= '/' + params['appli'] unless params['appli'].nil? %>" method="post">
+
+  <div class="field">
+    <label for="session_login">Login</label><br />
+    <input id="login" name="login" size="30" type="text" />
+  </div>
+
+  <div class="field">
+    <label for="session_password">Password</label><br />
+    <input id="password" name="password" size="30" type="password" />
+  </div>
+	
+	<div class="field">
+		<input id="back_url" name="back_url" size="30" type="hidden" value="<%= @back_url %>">
+	</div>
+
+	<div class="field">
+		<p>
+			Not registered yet ? <a href="/users/new"> Registration </a>
+		</p>	
+	</div>
+
+  <div class="actions">
+    <input name="commit" type="submit" value="Log-in" />
+  </div>
+
+</form>
+
+<p>
+<a href="/"> Go to index page </a>
+</p>
+
+</body>
+</html>
+

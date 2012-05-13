@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Index</title>
+</head>
+<body>
+
+
+<h1>Welcome</h1>
+
+	<% if current_user.nil? 
+		
+			%>
+
+		<p>Hi, please connect you :</p>
+    	<a href="/sessions/new"> Connect </a>
+    <p>Not registrated yet : </p>
+      <a href="/users/new"> Register </a>
+
+	<% else %>
+		
+		<p> Hi <%= current_user %> </p>
+
+		<p>
+			<% params['login'] = current_user %>
+      <a href="/users/<%= params['login']%>"> Your profile. </a>
+		</p>
+
+
+		<a href="/sessions/disconnect"> Disconnect </a>
+
+	
+	<% end %>
+
+
+</body>
+</html>
+

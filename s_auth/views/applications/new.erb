@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration application page</title>
+</head>
+<body>
+
+<h1>Registration application</h1>
+
+<% if @registration_error.nil? %>
+	<p class="info">Please find below the form to fill in to register an application :</p>
+<% else %>
+	<p>Error during the application registration</p>
+		<ul>
+		<% @registration_error.each do |champ, msgs| %>
+		<li><%= champ %> <%= msgs.join(', ') %></li>
+		<% end %>
+		</ul>
+<% end %>
+
+
+<form action="/applications" method="post">
+
+  <div class="field">
+    <label for="session_application_name">Application Name</label><br />
+    <input id="name" name="name" size="30" type="text" />
+  </div>
+  <div class="field">
+    <label for="session_application_url">Application Url</label><br />
+    <input id="url" name="url" size="30" type="url" />
+  </div>
+  <div class="actions">
+    <input name="commit" type="submit" value="Subscribe" />
+  </div>
+
+</form>
+
+<p>
+<a href="/"> Go to index page </a>
+</p>
+
+</body>
+</html>
+

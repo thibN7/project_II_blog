@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+</head>
+<body>
+
+<h1>User Profile</h1>
+        
+<p>Hi <%= current_user %> </p>
+            
+	<% if @users %>
+
+		<% if @users.count > 1 %>
+
+			<div class="usersList">
+
+				<p> Below the list of all the users registered in the authentication service : </p>
+
+				<ul>
+					<% @users.each do |user| %>
+						<% if user.login != "admin" %>
+							<li>
+								<form action="/users/<%= user.login %>" method="post"> 
+								<%=user.login%> - 
+								<input name="commit" type="submit" value="Delete <%=user.login%>" />
+								<input name="_method" type="hidden" value="delete" />
+								</form>
+							</li>
+						<% end %>
+					<% end %>
+				</ul>
+
+			</div>
+
+		<% else %>
+
+			<p> No user is registered to the authentication service yet. </p>
+
+		<% end %>
+
+	<% end %>
+
+	<p>
+	<a href="/applications/new"> Create an application</a>
+	</p>
+
+	<% if !@applications.empty?	%>
+
+		<div class="applicationsListCreated">
+
+			<p> Below the applications list you created : </p>
+	
+			<ul>
+				<% @applications.each do |appli| %>
+        	<li> 
+						<form action="/applications/<%=appli.name%>" method="post"> 
+						<%=appli.name%> : <%=appli.url%> -
+						<input name="commit" type="submit" value="Delete <%=appli.name%>" />
+						<input name="_method" type="hidden" value="delete" />
+						</form>
+					</li>
+        <% end %>
+			</ul>
+
+		</div>
+
+	<% else %>
+
+		<p> You have not created any applications yet. </p>
+
+	<% end %>
+
+
+	<% if !@utilizations.empty? %>
+
+		<div class="utilizationsList">
+
+			<p> Below the list of all the applications that you have used : </p>
+
+			<ul>
+				<% @utilizations.each do |util| 
+						appli = Application.find_by_id(util.application_id) %>
+					<li><%=appli.name%> : <%=appli.url%>
+				<% end %>
+			</ul>
+
+	<% else %>
+
+		<p> You have not used any applications yet. </p>
+	
+	<% end %>
+
+
+	<p>
+	<a href="/sessions/disconnect"> Disconnect </a>
+	</p>
+
+	<p>
+	<a href="/"> Go to index page </a>
+	</p>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Not found</title>
+</head>
+<body>
+
+<h1>Page not found</h1>
+
+	<% if @error == :appli_doesnt_exist %>
+
+		<p> You cannot delete this application : it does not exist. </p>
+
+	<% elsif @error == :appli_client_doesnt_exist %>
+
+		<p> You cannot access this application : it does not exist. </p>
+
+	<% elsif @error == :client_doesnt_exist %>
+
+		<p> You cannot delete this user : it does not exist. </p>
+
+	<% end %>
+ 
+<p>
+<a href="/"> Go to index page </a>
+</p>
+
+</body>
+</html>

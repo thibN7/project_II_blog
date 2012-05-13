@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forbidden</title>
+</head>
+<body>
+
+<h1>Forbidden : you don't have access to this page.</h1>
+
+	<% if @error_forbidden == :current_user_match_login %>
+
+		<p> You are not logged with the good account. </p>
+
+	<% elsif @error_forbidden == :current_user_nil %>
+
+		<p> You are not connected. </p>
+
+	<% elsif @error_forbidden == :user_id_appli_user_id_match %>
+
+		<p> You cannot delete this application : you are not the owner of it. </p>
+
+	<% elsif @error_forbidden == :user_not_admin %>
+
+		<p> You cannot delete this user : you are not the admin of the authentication service. </p>
+
+	<% end %>
+
+<p>
+<a href="/"> Go to index page </a>
+</p>
+ 
+</body>
+</html>
