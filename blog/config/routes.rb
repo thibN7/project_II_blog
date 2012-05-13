@@ -1,13 +1,19 @@
 Blog::Application.routes.draw do
-	
-	resources :posts
-  #resources :posts, :only => [:index]
-	#resources :posts, :only => [:new]
-	#resources :posts, :only => [:create]
-	#resources :posts, :only => [:destroy]
 
+	# ROOT
+	root :to => 'posts#index'
+	
+	# POSTS
+	resources :posts
+
+	# COMMENTS
 	match '/posts/:post_id/comments' => 'comments#create', :via => :post
 	match '/posts/:post_id/comments/:id' => 'comments#destroy', :via => :delete, :as => :comment
+
+	# SESSIONS
+	resources :sessions
+	match '/sessions' => 'sessions#destroy', :as => :session, :via => :delete
+	
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

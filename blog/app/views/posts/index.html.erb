@@ -1,5 +1,13 @@
 <h1>Posts#index</h1>
 
+<% if is_connected? %>
+<p>Connected</p>
+<p>Hi <%= current_user %> !</p>
+<% else %>
+<p>Not connected</p>
+<p><%= link_to 'Sign-in', new_session_path %></p>
+<% end %>
+
 <ul>  
 <% @posts.each do |post| %> 
   <li><%= post.title %> <%= link_to 'Delete', post, :confirm=>"Delete this post ?", method: :delete %>
@@ -9,3 +17,5 @@
 </ul>
 
 <p><%= link_to 'New post', new_post_path %></p>
+
+
