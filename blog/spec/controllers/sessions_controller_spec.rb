@@ -39,4 +39,19 @@ describe SessionsController do
 
 	end 
 
+	describe "destroy" do
+
+		it "should delete the session" do
+			request.env["rack.session"]["current_user_blog"] = "toto"
+			delete 'destroy'
+			request.env["rack.session"]["current_user_blog"].should == nil
+		end
+
+		it "should redirect the user to the posts_path" do
+			delete 'destroy'
+			response.should redirect_to(posts_path)
+		end
+
+	end
+
 end

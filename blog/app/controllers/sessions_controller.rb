@@ -13,5 +13,10 @@ class SessionsController < ApplicationController
 		end
 	end
 
+	def destroy
+		session["current_user_blog"] = nil
+		redirect_to posts_path
+	end
+
 
 end

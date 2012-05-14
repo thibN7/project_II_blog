@@ -1,0 +1,40 @@
+# Logfile created on 2012-05-13 16:32:26 +0200 by logger.rb/31641
+I, [2012-05-13T16:32:26.567305 #4770]  INFO -- : s_auth connection succeeded for the login thibault
+I, [2012-05-13T16:33:23.712078 #4781]  INFO -- : s_auth connection succeeded for the login thibault
+I, [2012-05-13T16:33:30.012952 #4781]  INFO -- : s_auth connection succeeded for the login thibault
+I, [2012-05-14T21:37:41.382035 #3070]  INFO -- : s_auth connection failed for the login toto
+I, [2012-05-14T21:38:11.388307 #3070]  INFO -- : s_auth connection succeeded for the login toto
+I, [2012-05-14T21:38:16.549108 #3070]  INFO -- : s_auth connection succeeded for the login toto
+I, [2012-05-14T21:39:38.443760 #3240]  INFO -- : s_auth connection succeeded for the login toto
+I, [2012-05-14T21:41:57.972909 #3240]  INFO -- : s_auth connection succeeded for the login test
+I, [2012-05-14T21:43:52.451322 #3240]  INFO -- : s_auth connection succeeded for the login azerty
+I, [2012-05-14T21:44:26.618427 #3240]  INFO -- : s_auth connection failed for the login fe
+I, [2012-05-14T21:44:31.229423 #3240]  INFO -- : s_auth connection succeeded for the login toto
+I, [2012-05-14T21:45:12.203827 #3336]  INFO -- : s_auth connection failed for the login rf
+I, [2012-05-14T21:45:15.824182 #3336]  INFO -- : s_auth connection succeeded for the login toto
+I, [2012-05-14T21:45:20.377207 #3336]  INFO -- : s_auth connection succeeded for the login toto
+I, [2012-05-14T21:49:28.794241 #3625]  INFO -- : s_auth connection succeeded for the login toto
+I, [2012-05-14T21:50:09.111512 #3625]  INFO -- : s_auth disconnection succeeded for the logintoto
+I, [2012-05-14T21:50:25.000081 #3625]  INFO -- : s_auth connection succeeded for the login toto
+I, [2012-05-14T21:50:50.103778 #3625]  INFO -- : Utilization of the client application appli_blog by the login toto
+I, [2012-05-14T21:50:50.332038 #3625]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T21:51:36.517283 #3625]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:17:23.497080 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:17:44.748320 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:18:12.870078 #4649]  INFO -- : s_auth disconnection succeeded for the logintoto
+I, [2012-05-14T22:18:22.929411 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:18:41.028432 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:30:09.308637 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:40:09.239843 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:40:58.156754 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:41:09.133613 #4649]  INFO -- : s_auth disconnection succeeded for the logintoto
+I, [2012-05-14T22:46:16.098904 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:46:32.904509 #4649]  INFO -- : s_auth connection succeeded for the login toto
+I, [2012-05-14T22:46:42.031605 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:46:48.379683 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:47:01.279057 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:47:28.470952 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:48:28.552664 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:49:07.737812 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto
+I, [2012-05-14T22:49:12.739439 #4649]  INFO -- : s_auth disconnection succeeded for the logintoto
+I, [2012-05-14T22:49:30.314605 #4649]  INFO -- : Client application appli_blog connection succeeded for the login toto

@@ -1,12 +1,19 @@
-<h1>Posts#index</h1>
+<h1>Posts listing</h1>
+
+<p>-----------------------------------------------</p>
 
 <% if is_connected? %>
 <p>Connected</p>
 <p>Hi <%= current_user %> !</p>
+<p><%= link_to 'Disconnect', session_path, :confirm => "Do you really want to disconnect ?", method: :delete %></p>
 <% else %>
 <p>Not connected</p>
 <p><%= link_to 'Sign-in', new_session_path %></p>
 <% end %>
+
+<p>---------------------------------------------------------------</p>
+
+<h2>List of all the posts</h2>
 
 <ul>  
 <% @posts.each do |post| %> 
@@ -15,6 +22,10 @@
 												<%= link_to 'Edit', edit_post_path(post.id) %></li>
 <% end %>
 </ul>
+
+<p>-----------------------------------------------</p>
+
+<h2>Want to create a new post ?</h2>
 
 <p><%= link_to 'New post', new_post_path %></p>
 

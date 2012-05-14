@@ -15,6 +15,11 @@ describe "posts/index.html.erb" do
 			rendered.should =~ /thibault/
 		end
 
+		it "should have a link called 'Disconnect' to disconnect the user" do
+			render
+			rendered.should have_link('Disconnect', :href => session_path)
+		end
+
 	end
 
 	describe "User not connected" do

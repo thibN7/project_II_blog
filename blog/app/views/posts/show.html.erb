@@ -1,13 +1,16 @@
 <h1><%= @post.title %></h1>
-<p><%= @post.body %><p>
-<br />
+<p>----------------------------------------------------------------------------------------------------<p>
+<h2><%= @post.body %></h2>
 
-
+<p>----------------------------------------------------------------------------------------------------<p>
 <% @post.comments.all.each do |comment| %>
-	<li><%= comment.writer %> <br /> <%= comment.body %> <br /> <%= link_to 'Delete', comment_path(@post, comment), method: :delete %></li> <br /> 
+	<li><h3><%= comment.writer %></h3>
+			<h4><%= comment.body %></h4>
+			<%= link_to 'Delete', comment_path(@post, comment), method: :delete %>
+			<p>--------------------------------------------------------------------<p></li>
 <% end %>
 
-
+<h5>Want to add a new comment ?</h5>
 <%= form_tag("/posts/#{@post.id}/comments", :method => "post") do %>
 <%= label(:comment, :writer, "Writer :") %>
 <%= text_field(:comment, :writer) %>
@@ -19,5 +22,5 @@
 <%= submit_tag("Add a comment") %>
 <% end %>
 
-
+<br/>
 <%= link_to 'Index', posts_path %>
